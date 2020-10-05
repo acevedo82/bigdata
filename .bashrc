@@ -120,12 +120,18 @@ fi
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 export HADOOP_HOME=/home/hdfs/hadoop-3.2.1
 export HIVE_HOME=/home/hdfs/apache-hive-3.1.2-bin
+export KAFKA_HOME=/home/hdfs/kafka_2.12-2.6.0
+export SPARK_HOME=/home/hdfs/spark-3.0.1-bin-without-hadoop
+export SPARK_PRINT_LAUNCH_COMMAND=true
+export SPARK_DIST_CLASSPATH=$(hadoop classpath)
 export HADOOP_INSTALL=$HADOOP_HOME
 export HADOOP_MAPRED_HOME=$HADOOP_HOME
 export HADOOP_COMMON_HOME=$HADOOP_HOME
 export HADOOP_HDFS_HOME=$HADOOP_HOME
 export YARN_HOME=$HADOOP_HOME
+export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
-export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin:$HIVE_HOME/bin
+export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin:$HIVE_HOME/bin:$KAFKA_HOME/bin:$SPARK_HOME/bin
 #export HADOOP_OPTS=”-Djava.library.path=$HADOOP_HOME/lib/native”
+export PYSPARK_PYTHON=python3
 
